@@ -1,0 +1,176 @@
+/* VARIANT-CALL
+ *
+ * Software dependencies:
+ *
+ * Annovar 2013-08-23
+ * Bowtie 1.0.0
+ * FastQC 0.10.1
+ * GNU coreutils 8.13
+ * GNU tar 1.26
+ * GNU Wget 1.13.4
+ * Perl 5.14.2
+ * PerM 0.4.0
+ * Gzip 1.4
+ * Samtools 0.1.19
+ * SHRiMP 2.2.3
+ * VarScan 2.3.6
+ * VCFdiffcall
+ *
+ * Data dependencies:
+ *
+ * A set of FastQ reads in color space for two cell lines: Caco and Geo. The
+ * common location is stored in the variable 'fastq-path'. The file names for
+ * each file name are stored in the variables 'caco-fastq-name' and
+ * 'geo-fastq-name'.
+ *
+ * System requirements:
+ *
+ * 6 GB free RAM
+ * 8 logic cores are recommended. Less is also fine.
+ *
+ */
+
+declare variant-call07a;
+
+// TASK DEFINITION
+
+// bowtie
+deftask bowtie-idx( idx : fa ) *{
+    bowtie-build $fa bowtie-index
+    tar cf $idx --remove-files bowtie-index.*
+}*
+
+deftask bowtie-align( sam : [task idx] [fastq1 fastq2] ) *{
+    tar xf $idx
+    bowtie -t --sam --threads 8 --chunkmbs 256 --best bowtie-index -1 $fastq1 -2 $fastq2 $sam
+}*
+
+// Samtools v0.1.19
+deftask samtools-view( bam : sam ) *{
+    samtools view -bS $sam > $bam
+}*
+
+deftask samtools-sort( sortedbam : bam ) *{
+    sortedbam=alignment-sorted.bam
+    samtools sort -m 6G $bam alignment-sorted
+}*
+
+deftask samtools-mpileup( mpileup : sortedbam fa ) *{
+    samtools mpileup -f $fa $sortedbam > $mpileup
+}*
+
+// varscan
+deftask varscan( vcf : mpileup ) *{
+    java net.sf.varscan.VarScan mpileup2snp $mpileup --output-vcf --p-value 99e-02 > $vcf
+}*
+
+deftask annovar-downdb( db fa : ~buildver ~query ) *{
+    fa=db/hg19_refGeneMrna.fa
+    annotate_variation.pl -buildver $buildver -downdb -webfrom annovar $query db/
+    tar cf $db db
+}*
+
+deftask annovar-convert( csv : infile ~format ) *{
+    convert2annovar.pl -format $format $infile > $csv
+}*
+
+deftask annovar-annotate( fun exonicfun : csv db ~buildver ) *{
+    fun=table.variant_function
+    exonicfun=table.exonic_variant_function
+    tar xf $db
+    annotate_variation.pl -buildver $buildver -geneanno -outfile table $csv db/
+}*
+
+deftask gunzip( out : gz ) *{
+    gzip -d -c -S .tar.gz $gz > $out
+}*
+
+deftask fastqc( zip : fastq ) *{
+    fastqc -f fastq -t 8 --noextract -o ./ $fastq
+    zip=*.zip
+}*
+
+deftask wget( file : ~path ~name ~ext ) *{
+    file=$name$ext
+    wget $path/$name$ext -O $file
+}*
+
+
+// MACROS
+
+defmacro snp-call( fastq1 fastq2 fa idx )
+    apply(
+        task       : varscan
+        mpileup    : apply(
+            task      : samtools-mpileup
+            fa        : fa
+            sortedbam : apply(
+                task : samtools-sort
+                bam  : apply(
+                    task : samtools-view
+                    sam  : apply(
+                        task  : bowtie-align
+                        idx   : idx
+                        fastq1 : fastq1
+                        fastq2 : fastq2
+                    )
+                )
+            )
+        )
+    );
+
+// WORKFLOW DEFINITION
+fastq-path = 'ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/sequence_read';
+fastq-name = 'SRR062634';
+
+// download human reference genome annotation database
+annodb fa = annovar-downdb(
+    query    : 'refGene'
+    buildver : 'hg19'
+);
+
+// download reads from the 1000 genomes project
+fastq1-gz = wget(
+    path : fastq-path
+    name : fastq-name
+    ext  : '_1.filt.fastq.gz'
+);
+
+fastq2-gz = wget(
+    path : fastq-path
+    name : fastq-name
+    ext  : '_2.filt.fastq.gz'
+);
+
+// extract
+fastq1 = gunzip( gz : fastq1-gz );
+fastq2 = gunzip( gz : fastq2-gz );
+
+// quality control
+qc = fastqc( fastq : fastq1 fastq2 );
+
+idx = bowtie-idx( fa : fa );
+
+vcf = snp-call(
+    fastq1 : fastq1
+    fastq2 : fastq2
+    fa     : fa
+    idx    : idx
+);
+
+csv = annovar-convert(
+    infile : vcf
+    format : 'vcf4'
+);
+
+fun = annovar-annotate(
+    csv      : csv
+    db       : annodb
+    buildver : 'hg19'
+);
+
+// TARGET DEFINITION
+
+target qc fun;
+
+
