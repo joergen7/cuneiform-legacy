@@ -2,21 +2,22 @@
 
 A Functional Workflow Language
 
-In the [Hi-WAY](https://github.com/marcbux/Hi-WAY) project we propose a novel approach of executing scientific
-workflows processing Big Data, as found in NGS applications, on distributed
-computational infrastructures. The Hi-WAY software stack comprises the func-
-tional workflow language Cuneiform as well as the Hi-WAY ApplicationMaster
-for [Apache Hadoop 2.x (YARN)](http://hadoop.apache.org/).
+In the [Hi-WAY](https://github.com/marcbux/Hi-WAY) project we propose a novel
+approach of executing scientific workflows processing Big Data, as found in NGS
+applications, on distributed computational infrastructures. The Hi-WAY software
+stack comprises the functional workflow language Cuneiform as well as the Hi-WAY
+ApplicationMaster for [Apache Hadoop 2.x (YARN)](http://hadoop.apache.org/).
 
 ### List of Contributors:
 
-- Jörgen Brandt (HU Berlin)
-- Marc Bux (HU Berlin)
-- Ulf Leser (HU Berlin)
+- [Jörgen Brandt (HU Berlin)](http://www2.informatik.hu-berlin.de/~brandjoe/)
+- [Marc Bux (HU Berlin)](http://www2.informatik.hu-berlin.de/~buxmarcn/)
+- [Ulf Leser (HU Berlin)](http://www2.informatik.hu-berlin.de/~leser/)
 
-Jörgen Brandt is funded by the European Commission through the [BiobankCloud](http://www.biobankcloud.com/)
-project. Marc Bux is funded by the Deutsche Forschungsgemeinschaft through
-research training group [SOAMED (GRK 1651)](http://www.informatik.hu-berlin.de/forschung/gebiete/soamed).
+Jörgen Brandt is funded by the European Commission through the
+[BiobankCloud](http://www.biobankcloud.com/) project. Marc Bux is funded by the
+Deutsche Forschungsgemeinschaft through research training group
+[SOAMED (GRK 1651)](http://www.informatik.hu-berlin.de/forschung/gebiete/soamed).
 
 Copyright 2014 [Humboldt-Universität zu Berlin](http://www.hu-berlin.de/)
 
