@@ -1,0 +1,6 @@
+declare testExtendUnusedMustWarn;
+
+label my-label;
+
+extend my-label
+    before( : x y ) *{ echo $x $y }*

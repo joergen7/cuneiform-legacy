@@ -1,0 +1,21 @@
+declare testWorkflow01;
+
+deftask my-first-task( x y z : word1 word2 ) *{}*
+deftask my-second-task( a : ) *{}*
+deftask my-third-task( f : x ) *{}*
+
+c = 'hello' 'world';
+
+x y =
+    'a'
+    'b'
+    apply(
+        task : my-first-task my-second-task
+        word1 : c
+        word2 : 'wonderful' )
+    apply(
+        task : my-third-task
+        word1 : apply( task : my-second-task )
+        word2 : 'really' );
+        
+target c x y;

@@ -1,0 +1,6 @@
+declare testTargetMustParse;
+
+x = 'Hallo';
+y = 'Welt';
+
+target x y;

@@ -1,0 +1,16 @@
+declare testAssignApplyNoTaskParamMustFail;
+
+deftask cat( out : a b ) *{
+}*
+
+a = 'a';
+b = 'b';
+
+x = apply(
+    a : a
+    b : b
+);
+
+target x;
+
+

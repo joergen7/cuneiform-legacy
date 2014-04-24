@@ -1,0 +1,5 @@
+declare testAssignNoTaskdefMustFail;
+
+x = apply(
+    task : not-def
+);

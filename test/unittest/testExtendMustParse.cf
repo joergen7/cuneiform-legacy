@@ -1,0 +1,11 @@
+declare testExtendMustParse;
+
+label my-task;
+label some-other-task;
+
+extend my-task some-other-task
+    before( : a b ) *{ some statement concerning $a and $b }*
+    after( c : ) *{ more to do to $c }*
+    for input x *{ delete $x }*
+    for output y *{ falsify $y }*
+    # prefix *{ halt computer }*

@@ -1,0 +1,5 @@
+declare testDefTaskNoPrototypeMustFail;
+
+deftask my-task *{
+    echo hello world
+}*

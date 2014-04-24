@@ -1,0 +1,3 @@
+declare testImportDeftaskMustParse;
+
+import test/unittest/testDeftaskMustParse.cf;

@@ -1,0 +1,12 @@
+declare testReduceDefTaskOutput.cf;
+
+deftask mklist( ~<list> : ) *{
+    echo hello >> $list
+    echo world >> $list
+}*
+
+target x;
+
+x = apply(
+    task : mklist
+);

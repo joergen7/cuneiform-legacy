@@ -1,0 +1,11 @@
+declare testMacroIdReplaceMustParse;
+
+defmacro replace-with-b( x )
+    b;
+
+a = 'a';
+b = 'b';
+
+c = replace-with-b( x : a );
+
+target c;

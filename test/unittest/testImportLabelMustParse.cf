@@ -1,0 +1,3 @@
+declare testImportMustParse;
+
+import test/unittest/testLabelMustParse.cf;

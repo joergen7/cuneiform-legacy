@@ -1,0 +1,5 @@
+declare testDefTaskDuplicateTaskParamMustFail;
+
+deftask my-task( z : x y x ) *{
+    cat $x $y > $z
+}*

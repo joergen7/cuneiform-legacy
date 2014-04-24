@@ -1,0 +1,3 @@
+declare testImportAssignMustParse;
+
+import test/unittest/testAssignStringMustParse.cf;

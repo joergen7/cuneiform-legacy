@@ -1,0 +1,3 @@
+declare testDefTaskParamTaskIsAlwaysStageless.cf;
+
+deftask my-task( y : task x ) *{}*

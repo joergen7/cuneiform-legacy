@@ -1,0 +1,12 @@
+declare testDefTaskImplicitMacroMustParse;
+
+deftask my-task( ~out : ~a ~b ) *{
+    out="$a $b"
+}*
+
+x = my-task(
+    a : 'hello'
+    b : 'world'
+);
+
+target x;

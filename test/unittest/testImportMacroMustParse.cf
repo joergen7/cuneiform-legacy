@@ -1,0 +1,3 @@
+declare testImportMacroMustParse;
+
+import test/unittest/testDefMacroMustParse.cf;

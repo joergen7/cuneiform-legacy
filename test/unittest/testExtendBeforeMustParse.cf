@@ -1,0 +1,10 @@
+declare testExtendBeforeMustParse;
+
+deftask my-task( x : a b ) *{
+   cat $a $b > $x
+}*
+
+extend my-task
+    before *{
+        echo hello world
+    }*

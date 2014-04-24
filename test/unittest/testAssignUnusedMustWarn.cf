@@ -1,0 +1,3 @@
+declare testAssignUnusedMustWarn.cf;
+
+x = 'test';

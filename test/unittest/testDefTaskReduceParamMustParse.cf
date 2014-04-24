@@ -1,0 +1,13 @@
+declare testDefTaskReduceParamMustParse.cf;
+
+deftask compress( tar.bz2 : <file-list> ) *{
+    tar cjf $tar.bz2 `cat $file-list`
+}*
+
+target archive;
+
+file-list = 'file1.txt' 'file2.txt';
+
+archive = apply(
+    file-list : file-list
+);

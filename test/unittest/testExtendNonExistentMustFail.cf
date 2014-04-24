@@ -1,0 +1,4 @@
+declare testExtendNonExistentMustFail;
+
+extend xy
+    before *{ before method }*

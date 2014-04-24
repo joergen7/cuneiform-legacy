@@ -1,0 +1,7 @@
+declare testExtendTaskMustParse.cf;
+
+deftask my-task *{ body }*
+
+extend my-task
+    before *{ before body }*
+    after *{ after body }*

@@ -1,0 +1,2 @@
+declare testDuplicateDeclareMustFail;
+declare one-more-time;

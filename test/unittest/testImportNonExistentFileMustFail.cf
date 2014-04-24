@@ -1,0 +1,3 @@
+declare testImportNonExistentFileMustFail;
+
+import test/unittest/non-existent-file.cf;

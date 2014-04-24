@@ -1,0 +1,5 @@
+declare testLabelBashRefMustParse;
+
+deftask my-task in bash( out : ) *{
+    echo hello world
+}*

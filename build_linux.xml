@@ -1,0 +1,22 @@
+<project default="gen">
+	
+	<property name="dir.src" value="src" />
+	<property name="dir.gen" value="gen" />
+	<property name="dir.lib" value="lib" />
+	
+	<path id="path.antlr">
+		<fileset dir="${dir.lib}">
+			<include name="antlr*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="gen">
+		<mkdir dir="${dir.gen}" />
+		<java classname="org.antlr.v4.Tool" classpathref="path.antlr" fork="true" failonerror="true">
+			<arg value="-o" />
+			<arg value="${dir.gen}" />
+			<arg value="${dir.src}/de/huberlin/cuneiform/language/Cuneiform.g4" />
+		</java>
+	</target>
+	
+</project>

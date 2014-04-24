@@ -1,0 +1,3 @@
+declare testAssignStageMixedStringMustFail;
+
+x = ~'a' 'b';

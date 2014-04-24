@@ -1,0 +1,8 @@
+declare testLabelMustParse;
+
+label s;
+
+label l1 : s;
+label l2 : s;
+
+label m : l1 l2;

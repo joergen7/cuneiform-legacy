@@ -1,0 +1,3 @@
+declare testImportDiamondMustParse3;
+
+label contrib3;

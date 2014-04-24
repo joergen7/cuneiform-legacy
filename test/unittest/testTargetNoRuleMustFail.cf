@@ -1,0 +1,3 @@
+declare testTargetNoRuleMustFail;
+
+target x;

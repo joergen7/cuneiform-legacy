@@ -1,0 +1,5 @@
+declare testImportErrorPropagationMustWork;
+
+import test/unittest/testDuplicateDeclareMustFail.cf;
+
+declare another-mistake;

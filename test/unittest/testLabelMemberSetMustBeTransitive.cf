@@ -1,0 +1,5 @@
+declare testLabelMemberSetMustBeTransitive;
+
+label a;
+label b : a;
+label c : b;

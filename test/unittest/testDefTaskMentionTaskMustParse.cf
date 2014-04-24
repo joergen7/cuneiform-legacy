@@ -1,0 +1,5 @@
+declare testDefTaskMentionTaskMustParse;
+
+deftask my-task( x : task a b ) *{
+    # code
+}*

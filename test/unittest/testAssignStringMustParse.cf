@@ -1,0 +1,3 @@
+declare assignStringMustParse;
+
+x = 'Hallo Welt';

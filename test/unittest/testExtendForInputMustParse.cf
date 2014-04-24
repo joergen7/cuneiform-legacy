@@ -1,0 +1,8 @@
+declare testExtendForInputMustParse;
+
+deftask my-task( x : a b ) *{ echo $a $b > $x }*
+
+extend my-task
+    for input yx-tr.tt *{
+        cat $yx-tr.tt
+    }*

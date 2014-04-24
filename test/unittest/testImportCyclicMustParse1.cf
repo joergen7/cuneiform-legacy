@@ -1,0 +1,5 @@
+declare testImportCyclicMustParse1;
+
+import test/unittest/testImportCyclicMustParse2.cf;
+
+label a;

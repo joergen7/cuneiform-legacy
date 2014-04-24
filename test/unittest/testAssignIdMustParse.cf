@@ -1,0 +1,4 @@
+declare testAssignIdMustParse;
+
+x = 'Hallo Welt';
+y = x;

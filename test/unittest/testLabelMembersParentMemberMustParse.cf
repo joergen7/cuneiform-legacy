@@ -1,0 +1,5 @@
+declare testLabelMembersParentMemberMustParse;
+
+label a;
+label b : a;
+label c : b a;

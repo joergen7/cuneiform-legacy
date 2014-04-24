@@ -1,0 +1,3 @@
+declare testImportTargetMustParse;
+
+import test/unittest/testTargetMustParse.cf;
