@@ -2,11 +2,11 @@
 
 A Functional Workflow Language
 
-In the Hi-WAY project we propose a novel approach of executing scientific
+In the [Hi-WAY](https://github.com/marcbux/Hi-WAY) project we propose a novel approach of executing scientific
 workflows processing Big Data, as found in NGS applications, on distributed
 computational infrastructures. The Hi-WAY software stack comprises the func-
 tional workflow language Cuneiform as well as the Hi-WAY ApplicationMaster
-for Apache Hadoop 2.x (YARN).
+for [Apache Hadoop 2.x (YARN)](http://hadoop.apache.org/).
 
 ### List of Contributors:
 
@@ -14,11 +14,11 @@ for Apache Hadoop 2.x (YARN).
 - Marc Bux (HU Berlin)
 - Ulf Leser (HU Berlin)
 
-Jörgen Brandt is funded by the European Commission through the BiobankCloud
+Jörgen Brandt is funded by the European Commission through the [BiobankCloud](http://www.biobankcloud.com/)
 project. Marc Bux is funded by the Deutsche Forschungsgemeinschaft through
-research training group SOAMED (GRK 1651).
+research training group [SOAMED (GRK 1651)](http://www.informatik.hu-berlin.de/forschung/gebiete/soamed).
 
-Copyright 2014 Humboldt-Universität zu Berlin
+Copyright 2014 [Humboldt-Universität zu Berlin](http://www.hu-berlin.de/)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
