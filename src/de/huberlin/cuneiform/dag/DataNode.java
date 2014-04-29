@@ -163,11 +163,8 @@ public class DataNode extends WfElement {
 	 */
 	public void setLiteral( String literal ) {
 		
-		if( literal.isEmpty() )
+		if( literal == null )
 			throw new NullPointerException( "Data name must not be null." );
-		
-		if( literal.isEmpty() )
-			throw new RuntimeException( "Data name must not be empty." );
 		
 		this.literal = literal;
 	}
