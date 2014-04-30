@@ -1,4 +1,0 @@
-declare testAssignDuplicateMustFail;
-
-x = 'Hallo';
-x = 'Welt';

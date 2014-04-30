@@ -1,5 +1,0 @@
-declare testImportSelfMustParse;
-
-import test/unittest/testImportSelfMustParse.cf;
-
-label a;

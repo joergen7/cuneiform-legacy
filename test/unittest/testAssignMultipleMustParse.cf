@@ -1,4 +1,0 @@
-declare testAssignMultipleMustParse;
-
-x = 'Hallo';
-y = x 'Welt';

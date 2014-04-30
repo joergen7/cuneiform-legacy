@@ -1,6 +1,0 @@
-declare testDeftaskUnusedMustParse;
-
-deftask test *{
-
-    echo "Hello World"
-}*

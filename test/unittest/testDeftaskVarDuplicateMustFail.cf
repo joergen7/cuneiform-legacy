@@ -1,5 +1,0 @@
-declare testDeftaskVarDuplicateMustFail;
-
-deftask my-task ( a : a ) *{
-    cat $a > $a
-}*

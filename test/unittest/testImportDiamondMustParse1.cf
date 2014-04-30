@@ -1,6 +1,0 @@
-declare testImportDiamondMustParse1;
-
-import test/unittest/testImportDiamondMustParse2a.cf;
-import test/unittest/testImportDiamondMustParse2b.cf;
-
-label contrib1 : contrib2a contrib2b;

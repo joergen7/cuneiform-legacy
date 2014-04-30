@@ -1,6 +1,0 @@
-declare testDefTaskRefTaskMustFail;
-
-deftask my-task( x : task a b ) *{
-    echo $task
-    cat $a $b > $x
-}*

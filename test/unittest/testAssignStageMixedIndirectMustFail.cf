@@ -1,7 +1,0 @@
-declare testAssignStageMixedIndirectMustFail;
-
-a = 'a';
-b = ~'b';
-c = a b;
-
-target c;

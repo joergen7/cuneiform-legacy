@@ -1,5 +1,0 @@
-declare testDefTaskReduceTaskMustParse;
-
-deftask my-task( x : <task> a b ) *{
-    cat $a $b > $x
-}*

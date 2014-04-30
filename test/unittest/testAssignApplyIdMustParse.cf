@@ -1,8 +1,0 @@
-declare testAssignApplyIdMustParse;
-
-deftask my-task( f : x ) *{ cat $x > $f }*
-
-x = apply(
-    task : my-task
-    x : 'test.txt'
-);

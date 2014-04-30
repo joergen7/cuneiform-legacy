@@ -1,5 +1,0 @@
-declare testDefTaskCorrelTaskMustParse;
-
-deftask my-task( x : [task a] b ) *{
-    # content
-}*

@@ -1,5 +1,0 @@
-declare testDefTaskNameEqLabelMustFail;
-
-label x;
-
-deftask x( output : ) *{ echo hello world > $output }*

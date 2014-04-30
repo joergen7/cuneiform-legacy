@@ -1,5 +1,0 @@
-declare testTargetDuplicateVarMustFail;
-
-x = 'Hello World';
-
-target x x;

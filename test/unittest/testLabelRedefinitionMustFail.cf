@@ -1,5 +1,0 @@
-declare testLabelRedefinitionMustFail;
-
-label a;
-label b;
-label b : a;

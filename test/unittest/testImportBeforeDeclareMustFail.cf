@@ -1,4 +1,0 @@
-import test/unittest/testLabelMustParse.cf;
-
-declare testImportBeforeDeclareMustFail;
-

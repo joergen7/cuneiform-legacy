@@ -1,4 +1,0 @@
-declare testMacroMustParse;
-
-defmacro my-macro( World )
-    'Hello' World;

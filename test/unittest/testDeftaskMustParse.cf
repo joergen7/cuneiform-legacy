@@ -1,8 +1,0 @@
-declare testDeftaskMustParse;
-
-label a;
-label b;
-
-deftask my-task in a b
-    ( x y : [c d] e <f> )
-    *{ body of $c task3 $d }*

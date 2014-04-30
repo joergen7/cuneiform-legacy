@@ -1,5 +1,0 @@
-declare testAssignStagelessStringMustParse;
-
-x = ~'stageless string';
-
-target x;

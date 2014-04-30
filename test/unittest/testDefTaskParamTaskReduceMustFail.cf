@@ -1,5 +1,0 @@
-declare testDefTaskParamTaskReduceMustFail.cf;
-
-deftask my-task( output : <task> ) *{
-    echo hello world > $output
-}*

@@ -1,5 +1,0 @@
-declare testLabelBashImplicitMustParse;
-
-deftask my-task( out : ) *{
-    echo hello world
-}*

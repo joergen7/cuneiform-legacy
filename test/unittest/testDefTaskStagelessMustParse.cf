@@ -1,3 +1,0 @@
-declare testDefTaskStagelessMustParse;
-
-deftask my-task( ~x : ~a ~b ) *{}*
