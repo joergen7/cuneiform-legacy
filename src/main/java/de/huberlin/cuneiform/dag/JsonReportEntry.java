@@ -115,6 +115,8 @@ public class JsonReportEntry {
 			obj = new JSONObject( raw );
 			
 			setTimestamp( obj.getLong( ATT_TIMESTAMP ) );
+			setRunId( UUID.fromString( obj.getString( ATT_RUNID ) ) );
+
 
 			if( obj.has( ATT_TASKID ) )
 				if( !obj.isNull( ATT_TASKID ) )
