@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.huberlin</groupId>
-  <artifactId>cuneiform-legacy</artifactId>
+  <artifactId>cuneiform</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>cuneiform-legacy</name>
+  <name>cuneiform</name>
   <url>http://maven.apache.org</url>
 
   <properties>
