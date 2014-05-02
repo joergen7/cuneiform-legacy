@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.huberlin</groupId>
-  <artifactId>cuneiform</artifactId>
+  <artifactId>cuneiform-legacy</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
