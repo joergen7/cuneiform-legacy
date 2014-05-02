@@ -115,13 +115,23 @@ public class JsonReportEntry {
 			obj = new JSONObject( raw );
 			
 			setTimestamp( obj.getLong( ATT_TIMESTAMP ) );
-			setTaskId( obj.getLong( ATT_TASKID ) );
+
+			if( obj.has( ATT_TASKID ) )
+				if( !obj.isNull( ATT_TASKID ) )
+					setTaskId( obj.getLong( ATT_TASKID ) );
 			
 			if( obj.has( ATT_TASKNAME ) )
-				setTaskname( obj.getString( ATT_TASKNAME ) );
+				if( !obj.isNull( ATT_TASKNAME ) )
+					setTaskname( obj.getString( ATT_TASKNAME ) );
 			
-			setLang( obj.getString( ATT_LANG ) );
-			setInvocId( obj.getLong( ATT_INVOCID ) );
+			if( obj.has( ATT_LANG ) )
+				if( !obj.isNull( ATT_LANG ) )
+					setLang( obj.getString( ATT_LANG ) );
+			
+			if( obj.has( ATT_INVOCID ) )
+				if( !obj.isNull( ATT_INVOCID ) )
+					setInvocId( obj.getLong( ATT_INVOCID ) );
+			
 			setKey( obj.getString( ATT_KEY ) );
 			
 			try {
