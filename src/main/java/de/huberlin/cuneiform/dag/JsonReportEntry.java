@@ -345,6 +345,8 @@ public class JsonReportEntry {
 		
 		buf.append( '{' );
 		buf.append( ATT_TIMESTAMP ).append( ':' ).append( timestamp ).append( ',' );
+		buf.append( ATT_RUNID ).append( ":\"" ).append( runId ).append( "\"," );
+		
 		
 		if( hasTaskId() )
 			buf.append( ATT_TASKID ).append( ':' ).append( taskId ).append( ',' );
