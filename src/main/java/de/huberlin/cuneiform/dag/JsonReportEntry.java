@@ -175,6 +175,10 @@ public class JsonReportEntry {
 		return key.replace( "\\n", "\n" );
 	}
 	
+	public String getLang() {
+		return lang;
+	}
+	
 	public 	String getValue() {
 		return value;
 	}
@@ -206,7 +210,7 @@ public class JsonReportEntry {
 		return taskname;
 	}
 	
-	public long getTaskId() {
+	public Long getTaskId() {
 		return taskId;
 	}
 	
